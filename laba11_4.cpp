@@ -55,8 +55,8 @@ int getsecondNumber(const string& str, int iterator_position) {
 
 void coppypaster(string& str, const string& tempstr, int resualt, int& i, bool b = false) {
     str.clear();
-    if (!b && tempstr.find(' ', i - 3 - int(log10(resualt + 1))) < 1024) {
-        str.append(tempstr, 0, tempstr.find(' ', i - 3));
+    if (!b && tempstr.find(' ', i - 4 - int(log10(resualt + 1))) < 1024) {
+        str.append(tempstr, 0, tempstr.find(' ', i - 4 - int(log10(resualt + 1))));
     }
     if (str.size()) {
         str += " ";
@@ -165,7 +165,7 @@ string removebrackets(string str) {
     int leftbreket = str.rfind('(');
     int rightbreket = str.find(')');
     if (leftbreket > rightbreket) {
-        for (int i = rightbreket; i >= 0; i--) {   // (1 + (2 + 3))
+        for (int i = rightbreket; i >= 0; i--) {       // (1 + (2 + 3))
             if (str.at(i) == '(') {
                 leftbreket = i;
                 break;
